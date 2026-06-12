@@ -1282,6 +1282,12 @@ body.mode-onepager #onepager { display:block; }
 
       <hr class="nda-divider">
 
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px;">
+        <input type="text" id="ndaName" placeholder="Nombre y apellido · Full name" autocomplete="name" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:6px;padding:11px 14px;color:#F0EDE8;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;">
+        <input type="email" id="ndaEmail" placeholder="Email (opcional)" autocomplete="email" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:6px;padding:11px 14px;color:#F0EDE8;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;">
+        <div id="ndaError" style="display:none;font-size:11px;color:#e07070;letter-spacing:0.04em;">Por favor ingresá tu nombre · Please enter your name</div>
+      </div>
+
       <label class="nda-check-row">
         <input type="checkbox" id="ndaCheck">
         <span class="nda-check-label">
@@ -2435,10 +2441,46 @@ document.addEventListener('keydown', e => {
 
   ndaBtn.addEventListener('click', () => {
     if (!ndaCheck.checked) return;
+    const nameEl = document.getElementById('ndaName');
+    const emailEl = document.getElementById('ndaEmail');
+    const errEl = document.getElementById('ndaError');
+    const sName = (nameEl && nameEl.value || '').trim();
+    const sEmail = (emailEl && emailEl.value || '').trim();
+    if (!sName) {
+      if (errEl) errEl.style.display = 'block';
+      if (nameEl) { nameEl.style.borderColor = '#e07070'; nameEl.focus(); }
+      return;
+    }
+    // Log signer to Web3Forms (fire-and-forget, never blocks access)
+    try {
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: '959c8717-8f8a-4148-b9b7-04e3df2e703f',
+          subject: 'NDA firmado — Deck Cafecito',
+          from_name: 'Cafecito Deck',
+          name: sName,
+          email: sEmail || 'no provisto',
+          message: sName + ' firmó el NDA y accedió al deck' + (sEmail ? ' · ' + sEmail : '') + ' · ' + new Date().toLocaleString('es-AR'),
+          botcheck: false
+        })
+      }).catch(function(){});
+    } catch(_) {}
     try { sessionStorage.setItem(NDA_SKEY, '1'); } catch(_) {}
     body.classList.remove('nda-pending');
     setTimeout(() => { if (input) input.focus(); }, 100);
   });
+
+  // Clear error styling as user types
+  (function(){
+    const n = document.getElementById('ndaName');
+    if (n) n.addEventListener('input', function(){
+      const e = document.getElementById('ndaError');
+      if (e) e.style.display = 'none';
+      n.style.borderColor = 'rgba(255,255,255,0.15)';
+    });
+  })();
 
   function unlock() {
     document.body.classList.remove('locked');
