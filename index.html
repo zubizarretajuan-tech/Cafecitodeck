@@ -784,14 +784,14 @@ body.lang-mode-es .lang-en { display: none; }
   display: none;
   position: fixed; inset: 0; z-index: 10000;
   background: #0D0D0D;
-  align-items: flex-start; justify-content: center;
+  align-items: center; justify-content: center;
   overflow-y: auto;
-  padding: 48px 24px;
+  padding: 24px;
 }
 body.nda-pending #nda-gate { display: flex; }
 .nda-wrap {
-  width: 100%; max-width: 680px;
-  display: flex; flex-direction: column; gap: 28px;
+  width: 100%; max-width: 640px;
+  display: flex; flex-direction: column; gap: 18px;
 }
 .nda-logo {
   font-family: 'DM Sans', sans-serif; font-weight: 500;
@@ -804,13 +804,17 @@ body.nda-pending #nda-gate { display: flex; }
 }
 .nda-box {
   background: #141414; border: 1px solid rgba(255,255,255,0.08);
-  padding: 28px 32px; display: flex; flex-direction: column; gap: 20px;
+  padding: 22px 28px; display: flex; flex-direction: column; gap: 16px;
 }
 .nda-title {
   font-size: 11px; letter-spacing: 0.18em; color: #C9A227;
   text-transform: uppercase; font-weight: 600; text-align: center;
 }
 .nda-lang-block { display: flex; flex-direction: column; gap: 8px; }
+.nda-scroll { max-height: 30vh; overflow-y: auto; padding: 4px 14px 4px 2px; display: flex; flex-direction: column; gap: 16px; border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 14px; background: rgba(0,0,0,0.2); }
+.nda-scroll::-webkit-scrollbar { width: 6px; }
+.nda-scroll::-webkit-scrollbar-thumb { background: rgba(201,162,39,0.4); border-radius: 3px; }
+
 .nda-lang-label {
   font-size: 9px; letter-spacing: 0.14em; color: rgba(201,162,39,0.5);
   text-transform: uppercase; font-weight: 600;
@@ -1260,27 +1264,18 @@ body.mode-onepager #onepager { display:block; }
       <div class="nda-logo-sub">Confidential · Investor Materials · 2026</div>
     </div>
     <div class="nda-box">
-      <div class="nda-title">Non-Disclosure Agreement · Acuerdo de Confidencialidad</div>
-
-      <div class="nda-lang-block">
-        <div class="nda-lang-label">English</div>
-        <div class="nda-text">
-          By accessing this document, you agree to keep strictly confidential all information contained herein, including but not limited to financial projections, business strategy, operational data, and any other proprietary information disclosed by <strong style="color:rgba(245,240,230,0.9);">Cafecito TCS S.R.L.</strong> ("the Company").<br><br>
-          You agree not to copy, reproduce, distribute, or disclose any portion of this material to any third party without prior written consent from the Company. This document is provided solely for the purpose of evaluating a potential investment and does not constitute an offer or solicitation to buy or sell any securities. The information herein is subject to change without notice and its accuracy is not guaranteed.
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <div class="nda-title" style="text-align:left;"><span class="lang-en">Non-Disclosure Agreement</span><span class="lang-es">Acuerdo de Confidencialidad</span></div>
+        <div style="display:flex;gap:6px;flex-shrink:0;">
+          <button type="button" onclick="document.body.classList.remove('lang-mode-es');document.body.classList.add('lang-mode-en');" style="background:none;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);padding:4px 12px;font-size:10px;letter-spacing:0.12em;font-family:'DM Sans',sans-serif;cursor:pointer;border-radius:4px;">EN</button>
+          <button type="button" onclick="document.body.classList.remove('lang-mode-en');document.body.classList.add('lang-mode-es');" style="background:none;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);padding:4px 12px;font-size:10px;letter-spacing:0.12em;font-family:'DM Sans',sans-serif;cursor:pointer;border-radius:4px;">ES</button>
         </div>
       </div>
 
-      <hr class="nda-divider">
-
-      <div class="nda-lang-block">
-        <div class="nda-lang-label">Español</div>
-        <div class="nda-text">
-          Al acceder a este documento, usted se compromete a mantener estrictamente confidencial toda la información aquí contenida, incluyendo pero no limitándose a proyecciones financieras, estrategia comercial, datos operativos y cualquier otra información propietaria divulgada por <strong style="color:rgba(245,240,230,0.9);">Cafecito TCS S.R.L.</strong> ("la Empresa").<br><br>
-          Usted acepta no copiar, reproducir, distribuir ni divulgar ninguna parte de este material a terceros sin el consentimiento previo por escrito de la Empresa. Este documento se proporciona únicamente a los efectos de evaluar una potencial inversión y no constituye una oferta ni una solicitud de compra o venta de valores. La información aquí contenida está sujeta a cambios sin previo aviso y su exactitud no está garantizada.
-        </div>
+      <div class="nda-text">
+        <span class="lang-en">By accessing this document, you agree to keep strictly confidential all information contained herein, including but not limited to financial projections, business strategy, operational data, and any other proprietary information disclosed by <strong style="color:rgba(245,240,230,0.9);">Cafecito TCS S.R.L.</strong> ("the Company").<br><br>You agree not to copy, reproduce, distribute, or disclose any portion of this material to any third party without prior written consent from the Company. This document is provided solely for the purpose of evaluating a potential investment and does not constitute an offer or solicitation to buy or sell any securities. The information herein is subject to change without notice and its accuracy is not guaranteed.</span><span class="lang-es">Al acceder a este documento, usted se compromete a mantener estrictamente confidencial toda la información aquí contenida, incluyendo pero no limitándose a proyecciones financieras, estrategia comercial, datos operativos y cualquier otra información propietaria divulgada por <strong style="color:rgba(245,240,230,0.9);">Cafecito TCS S.R.L.</strong> ("la Empresa").<br><br>Usted acepta no copiar, reproducir, distribuir ni divulgar ninguna parte de este material a terceros sin el consentimiento previo por escrito de la Empresa. Este documento se proporciona únicamente a los efectos de evaluar una potencial inversión y no constituye una oferta ni una solicitud de compra o venta de valores. La información aquí contenida está sujeta a cambios sin previo aviso y su exactitud no está garantizada.</span>
       </div>
-
-      <hr class="nda-divider">
+<hr class="nda-divider">
 
       <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px;">
         <input type="text" id="ndaName" placeholder="Nombre y apellido · Full name" autocomplete="name" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:6px;padding:11px 14px;color:#F0EDE8;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;">
@@ -1290,13 +1285,10 @@ body.mode-onepager #onepager { display:block; }
 
       <label class="nda-check-row">
         <input type="checkbox" id="ndaCheck">
-        <span class="nda-check-label">
-          I have read, understood, and agree to the terms of this Non-Disclosure Agreement. ·
-          He leído, comprendido y acepto los términos del presente Acuerdo de Confidencialidad.
-        </span>
+        <span class="nda-check-label"><span class="lang-en">I have read, understood, and agree to the terms of this Non-Disclosure Agreement.</span><span class="lang-es">He leído, comprendido y acepto los términos del presente Acuerdo de Confidencialidad.</span></span>
       </label>
 
-      <button class="nda-btn" id="ndaBtn">I Agree &amp; Continue · Acepto y Continuar</button>
+      <button class="nda-btn" id="ndaBtn"><span class="lang-en">I Agree &amp; Continue</span><span class="lang-es">Acepto y Continuar</span></button>
     </div>
   </div>
 </div>
