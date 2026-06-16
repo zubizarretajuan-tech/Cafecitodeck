@@ -1007,6 +1007,8 @@ body.mode-onepager #onepager { display:block; }
 .op-ul li { font-size:10.5px; color:#C8BFB0; display:flex; gap:8px; line-height:1.5; }
 .op-ul li::before { content:"—"; color:#C9A227; flex-shrink:0; font-weight:300; }
 .op-table { width:100%; border-collapse:collapse; font-size:10px; }
+  #op-proj th, #op-proj td { padding:5px 5px; font-size:8px; letter-spacing:0.02em; white-space:nowrap; }
+  #op-proj th:first-child, #op-proj td:first-child { padding-left:7px; }
 .op-table th { background:rgba(0,0,0,0.3); padding:7px 8px; text-align:left; font-weight:500; color:#F0EDE8; border-bottom:1px solid rgba(201,162,39,0.3); font-size:8.5px; letter-spacing:0.12em; text-transform:uppercase; }
 .op-table td { padding:6px 8px; border-bottom:1px solid rgba(255,255,255,0.05); color:#C8BFB0; }
 .op-table .op-hl { background:rgba(201,162,39,0.07); font-weight:600; color:#F0EDE8; }
@@ -1194,17 +1196,6 @@ body.mode-onepager #onepager { display:block; }
       <div style="font-size:8px;color:rgba(255,180,0,0.8);letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin-bottom:4px;color:#C9A227;"><span class="lang-en">Operational metrics</span><span class="lang-es">Métricas operativas</span></div>
       <div style="font-size:9.5px;color:#C8BFB0;line-height:1.75;"><strong style="color:#F0EDE8;"><span class="lang-en">Cups/day:</span><span class="lang-es">Tazas/día:</span></strong> Palermo 180 · Colegiales 115 · Chapadmalal 150<br><strong style="color:#F0EDE8;"><span class="lang-en">Mix:</span><span class="lang-es">Mix:</span></strong> <span class="lang-en">Coffee 53% · Bakery 27% · Kitchen 14%</span><span class="lang-es">Café 53% · Pastelería 27% · Cocina 14%</span><br><strong style="color:#C9A227;"><span class="lang-en">Roastery:</span><span class="lang-es">Tostadero:</span></strong> <span class="lang-en">industrial roastery in process</span><span class="lang-es">tostadero industrial en proceso</span></div>
     </div></div>
-    <!-- THE ASK -->
-    <div style="background:linear-gradient(135deg,rgba(201,162,39,0.14),rgba(201,162,39,0.05));border:1px solid rgba(201,162,39,0.4);border-radius:4px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-      <div>
-        <div style="font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:#C9A227;font-weight:600;margin-bottom:4px;"><span class="lang-en">The Round</span><span class="lang-es">La Ronda</span></div>
-        <div style="font-size:20px;font-weight:500;color:#F0EDE8;letter-spacing:0.02em;font-family:'DM Sans',sans-serif;" data-op-display="deal-terms">USD 1M · 20% equity</div>
-      </div>
-      <div style="text-align:right;font-size:9px;color:#7A6A5A;line-height:1.6;">
-        <span class="lang-en">Equity</span><span class="lang-es">Equity</span><br>
-        <span class="lang-en">Self-funding from 2028</span><span class="lang-es">Autofinanciable desde 2028</span>
-      </div>
-    </div>
     <div class="op-footnote"><span class="lang-en">Confidential. For evaluation purposes only.</span><span class="lang-es">Confidencial. Solo para evaluación.</span></div>
   </div>
   <div class="op-page">
@@ -1221,12 +1212,12 @@ body.mode-onepager #onepager { display:block; }
     <div class="op-grid-2">
       <div>
         <div class="op-section-title"><span class="lang-en">Financial Projections</span><span class="lang-es">Proyecciones Financieras</span></div>
-        <div class="op-box"><table class="op-table">
+        <div class="op-box"><table class="op-table" id="op-proj">
           <tr><th><span class="lang-en">Metric</span><span class="lang-es">Métrica</span></th><th>2026<sup style="font-size:0.65em;font-weight:400;opacity:0.7;"> (6M)</sup></th><th>2027</th><th>2028</th><th>2029</th><th>2030</th><th>2031</th></tr>
           <tr><td><span class="lang-en">Revenue</span><span class="lang-es">Facturación</span></td><td data-op-display="rev-2026">$0.6M</td><td class="op-hl" data-op-display="rev-2027">$3.1M</td><td data-op-display="rev-2028">$5.3M</td><td data-op-display="rev-2029">$6.3M</td><td>$7.5M</td><td>$8.3M</td></tr>
           <tr><td>EBITDA</td><td data-op-display="ebitda-2026" style="color:#c0392b;">($77K)</td><td class="op-hl" data-op-display="ebitda-2027">$212K</td><td data-op-display="ebitda-2028">$768K</td><td data-op-display="ebitda-2029">$1.07M</td><td>$1.41M</td><td>$1.68M</td></tr>
           <tr><td><span class="lang-en">Margin</span><span class="lang-es">Margen</span></td><td data-op-display="ebitda-margin-2026" style="color:#999;">-13%</td><td class="op-hl" data-op-display="ebitda-margin-2027">6.8%</td><td data-op-display="ebitda-margin-2028">14.6%</td><td data-op-display="ebitda-margin-2029">17%</td><td>19%</td><td>20%</td></tr>
-        </table><div style="margin-top:6px;font-size:7.5px;color:#aaa;font-style:italic;"><span class="lang-en">EBITDA+ from 2027 · FCF+ from 2028 · full 6-yr model (2026–2031)* under NDA</span><span class="lang-es">EBITDA+ desde 2027 · FCF+ desde 2028 · modelo completo 6 años (2026–2031)* bajo NDA</span></div></div>
+        </table><div style="margin-top:6px;font-size:7.5px;color:#aaa;font-style:italic;"><span class="lang-en">EBITDA+ from 2027 · FCF+ from 2028 · full 10-yr model (to 2037)*</span><span class="lang-es">EBITDA+ desde 2027 · FCF+ desde 2028 · modelo completo 10 años (a 2037)*</span></div></div>
         <div style="margin-top:10px;"><div class="op-section-title"><span class="lang-en">Valuation</span><span class="lang-es">Valuación</span></div>
         <div class="op-box"><div style="display:flex;gap:16px;align-items:center;">
           <div><div style="font-size:7.5px;color:#888;margin-bottom:3px;">EV (DCF)</div><div class="op-big">USD 5.8M</div></div>
@@ -1246,10 +1237,69 @@ body.mode-onepager #onepager { display:block; }
       </div>
     </div>
     <div class="op-footnote">
+      <span class="lang-en">* No-exit IRR: 10y FCF dividends + conservative terminal value (perpetuity g=3%) — no liquidity event. Confidential. For evaluation only. WACC ~17.5% (Rf 4.2% + β·ERP 3.1% + EMBI 4.25% + Size 6.0%; Goldman Sachs model). EV/EBITDA peers 10–14×.</span><span class="lang-es">* TIR sin salida: 10a dividendos FCF + valor terminal conservador (perpetuidad g=3%) — sin evento de liquidez. Confidencial. Solo para evaluación. WACC ~17,5% (modelo Goldman Sachs). EV/EBITDA comparables: 10–14×.</span>
+    </div>
+  </div>
+<div class="op-page">
+    <img class="op-bg" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect width='10' height='10' fill='%231C1C1C'/%3E%3C/svg%3E">
+    <div class="op-header">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+          <img src="data:image/png;base64,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" style="height:26px;width:auto;filter:invert(1);opacity:0.9;">
+          <span style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:18px;letter-spacing:0.28em;text-transform:uppercase;color:#F0EDE8;">CAFECITO</span>
+        </div>
+      </div>
+      <div class="op-contact"><span style="color:#C9A227;font-weight:600;font-size:9px;letter-spacing:0.14em;">Confidential · 2026</span></div>
+    </div>
+        <!-- THE ROUND -->
+    <div class="op-section-title"><span class="lang-en">The Round</span><span class="lang-es">La Ronda</span></div>
+    <div style="background:linear-gradient(135deg,rgba(201,162,39,0.16),rgba(201,162,39,0.05));border:1px solid rgba(201,162,39,0.45);border-radius:4px;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <div>
+        <div style="font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:#C9A227;font-weight:600;margin-bottom:4px;"><span class="lang-en">Raising</span><span class="lang-es">Levantamos</span></div>
+        <div style="font-size:26px;font-weight:500;color:#F0EDE8;letter-spacing:0.02em;font-family:'DM Sans',sans-serif;" data-op-display="deal-terms">USD 1M · 20% equity</div>
+      </div>
+      <div style="text-align:right;font-size:9px;color:#7A6A5A;line-height:1.6;">
+        <span class="lang-en">EV (DCF) USD 5.8M · ~17.5% WACC</span><span class="lang-es">EV (DCF) USD 5,8M · WACC ~17,5%</span><br>
+        <span class="lang-en">Self-funding from 2028 · escrow against milestones</span><span class="lang-es">Autofinanciable desde 2028 · escrow contra hitos</span>
+      </div>
+    </div>
+    <!-- USE OF FUNDS -->
+    <div class="op-grid-2" style="margin-top:6px;">
+      <div>
+        <div class="op-section-title"><span class="lang-en">Use of Funds — USD 1M</span><span class="lang-es">Uso de Fondos — USD 1M</span></div>
+        <div class="op-box"><table class="op-table">
+          <tr><th>Item</th><th><span class="lang-en">Amount</span><span class="lang-es">Monto</span></th></tr>
+          <tr><td><span class="lang-en">Locations capex — network*</span><span class="lang-es">Capex locales — red*</span></td><td class="op-hl">~$430K</td></tr>
+          <tr><td><span class="lang-en">Roastery — capacity + equipment**</span><span class="lang-es">Tostadero — capacidad + equipo**</span></td><td>~$150K</td></tr>
+          <tr><td><span class="lang-en">Working capital — wholesale</span><span class="lang-es">Working capital — mayorista</span></td><td>~$150K</td></tr>
+          <tr><td><span class="lang-en">Working capital — e-commerce + structure</span><span class="lang-es">Working capital — e-commerce + estructura</span></td><td>~$50K</td></tr>
+          <tr><td><span class="lang-en">Management + runway (2026)</span><span class="lang-es">Management + runway (2026)</span></td><td>~$70K</td></tr>
+          <tr><td><span class="lang-en">Contingency</span><span class="lang-es">Contingencia</span></td><td>~$150K</td></tr>
+          <tr style="border-top:2px solid rgba(201,162,39,0.4);"><td><strong>TOTAL</strong></td><td><strong>~$1.0M</strong></td></tr>
+        </table>
+        <div style="margin-top:6px;font-size:7px;color:#888;line-height:1.6;"><span class="lang-en">* 6 CABA · 3 public parks · 2 seasonal &nbsp; ** roastery target ~15,000 kg/mo</span><span class="lang-es">* 6 CABA · 3 parques · 2 temporada &nbsp; ** tostadero objetivo ~15.000 kg/mes</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="op-section-title"><span class="lang-en">Structure &amp; runway</span><span class="lang-es">Estructura y runway</span></div>
+        <div class="op-box"><ul class="op-ul">
+          <li><span class="lang-en">Capital builds <strong>tangible assets</strong> — locations + roastery, not operating losses</span><span class="lang-es">El capital construye <strong>activos tangibles</strong> — locales + tostadero, no pérdidas operativas</span></li>
+          <li><span class="lang-en">Covers 2026–2027 cash trough (−USD 850K); <strong>~USD 150K cushion</strong></span><span class="lang-es">Cubre el valle de caja 2026–2027 (−USD 850K); <strong>colchón ~USD 150K</strong></span></li>
+          <li><span class="lang-en">Near debt-free balance (USD 100K) — headroom to lever capex / WC</span><span class="lang-es">Balance casi sin deuda (USD 100K) — headroom para apalancar capex / WC</span></li>
+          <li><span class="lang-en">Funds in <strong>escrow</strong> — released against agreed milestones</span><span class="lang-es">Fondos en <strong>escrow</strong> — liberados contra hitos acordados</span></li>
+        </ul></div>
+        <div class="op-box" style="margin-top:8px;text-align:center;border-left:none;border-top:3px solid #C9A227;">
+          <div style="font-size:8px;letter-spacing:0.2em;color:#888;text-transform:uppercase;margin-bottom:2px;">Runway</div>
+          <div style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:34px;letter-spacing:0.04em;color:#C9A227;line-height:1;">24–30</div>
+          <div style="font-size:9px;color:#888;"><span class="lang-en">months to positive cash flow</span><span class="lang-es">meses a flujo de caja positivo</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="op-footnote">
       <div style="margin-bottom:8px;color:#F0EDE8;font-style:normal;font-size:9px;letter-spacing:0.06em;font-weight:500;">
         Juan Zubizarreta · jzubizarreta@cafecito.com.ar · cafecito.com.ar · @cafecito.tcs
       </div>
-      <span class="lang-en">* No-exit IRR: 10y FCF dividends + conservative terminal value (perpetuity g=3%, WACC 17.5%) — no liquidity event. Confidential. For evaluation only. Full model and data room under NDA. WACC ~17.5% (Rf 4.2% + β·ERP 3.1% + EMBI 4.25% + Size 6.0%; Goldman Sachs model). EV/EBITDA peers 10–14×.</span><span class="lang-es">* TIR sin salida: 10a dividendos FCF + valor terminal conservador (perpetuidad g=3%, WACC 17,5%) — sin evento de liquidez. Confidencial. Solo para evaluación. Modelo y data room bajo NDA. WACC ~17,5% (modelo Goldman Sachs). EV/EBITDA comparables: 10–14×.</span>
+      <span class="lang-en">Confidential. For evaluation purposes only. Full model and data room available on request.</span><span class="lang-es">Confidencial. Solo para evaluación. Modelo y data room disponibles a pedido.</span>
     </div>
   </div>
 </div>
